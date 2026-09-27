@@ -61,45 +61,45 @@ int can_gpio_init(CAN_TypeDef* CANx,            /*<CANx Selection>*/
 int can_init(CAN_TypeDef* CANx,                 /*<CAN protocol contraler Selection>*/
 	
              /*-------------- CAN functional options configuration: -----------------------------*/
-             bool TTCM,                         /*<Time triggered communication mode>*/
-						 bool ABOM,                         /*< Automatic bus-off management>*/
-						 bool AWUM,                         /*< Automatic wakeup mode>*/
-						 bool NART,                         /*< No automatic retransmission>*/
-             bool RFLM,                         /*< Receive FIFO locked mode>*/
-						 bool TXFP,                         /*< Transmit FIFO priority>*/
+				bool TTCM,                         /*<Time triggered communication mode>*/
+				bool ABOM,                         /*< Automatic bus-off management>*/
+				bool AWUM,                         /*< Automatic wakeup mode>*/
+				bool NART,                         /*< No automatic retransmission>*/
+				bool RFLM,                         /*< Receive FIFO locked mode>*/
+				bool TXFP,                         /*< Transmit FIFO priority>*/
 
              /*-------------- Bit timing configuration: -----------------------------------------*/						 
-             uint32_t SJW,                      /*< Synchronization Jump Width>*/
-						 uint32_t BS1,                      /*< Bit segment 1>*/
-						 uint32_t BS2,                      /*< Bit segment 2>*/
-             uint32_t PRESCALER,                /*< Baud rate prescaler>*/ 
+				uint32_t SJW,                      /*< Synchronization Jump Width>*/
+				uint32_t BS1,                      /*< Bit segment 1>*/
+				uint32_t BS2,                      /*< Bit segment 2>*/
+				uint32_t PRESCALER,                /*< Baud rate prescaler>*/ 
 
              /*-------------- Testing configuration: -------------------------------------------*/						 
-             bool LOOPBACK,                     /*< for enable or Disable CAN Loop back Mode>*/
-						 bool SILENT                        /*< for enable or Disable CAN Silent Mode>*/
+				bool LOOPBACK,                     /*< for enable or Disable CAN Loop back Mode>*/
+				bool SILENT                        /*< for enable or Disable CAN Silent Mode>*/
 							); 
 						 
 
 int can_transmit(CAN_TypeDef *CANx,             /*<CAN protocol contraler Selection>*/
 	
 	              /*-------------- Transmission parametrs: ---------------------------------------*/
-	               uint32_t ID,                   /*< Message identifier>*/   
-                 bool EXT,                      /*< Used for extend message ID>*/ 
-								 bool RTR,                      /*< Remote transmission request (This node waits data from another node)>*/ 
-                 uint8_t DLC,                   /*< Data length>*/ 
-								 uint8_t *DATA);                /*< DATA Transmition>*/ 
+				uint32_t ID,                   /*< Message identifier>*/   
+				bool EXT,                      /*< Used for extend message ID>*/ 
+				bool RTR,                      /*< Remote transmission request (This node waits data from another node)>*/ 
+				uint8_t DLC,                   /*< Data length>*/ 
+				uint8_t *DATA);                /*< DATA Transmition>*/ 
 								 
 
 int can_filter_init(CAN_TypeDef* CANx,          /*< CAN protocol controller selection >*/
     
                     /*-------------- Filter parameters: --------------------------------------------*/
-                    uint32_t  filter_number,    /*< Filter bank number >*/
-                    bool      scale_32bit,      /*< Filter scale(32/16) bit >*/
-                    bool      id_list_mode,     /*< Filter mode (identifier list mode/ false = mask mode) >*/
-                    uint32_t  filter_register1, /*< First filter register R1>*/
-                    uint32_t  filter_register2, /*< Second filter register R2 >*/
-                    uint32_t  fifo,             /*< FIFO assignment ( 0 : FIFO0, 1 : FIFO1) >*/
-                    bool      enable);          /*< Filter activation (enable / disable) >*/
+				uint32_t  filter_number,    /*< Filter bank number >*/
+				bool      scale_32bit,      /*< Filter scale(32/16) bit >*/
+				bool      id_list_mode,     /*< Filter mode (identifier list mode/ false = mask mode) >*/
+				uint32_t  filter_register1, /*< First filter register R1>*/
+				uint32_t  filter_register2, /*< Second filter register R2 >*/
+				uint32_t  fifo,             /*< FIFO assignment ( 0 : FIFO0, 1 : FIFO1) >*/
+				bool      enable);          /*< Filter activation (enable / disable) >*/
 
 
 												 

@@ -150,22 +150,22 @@ int can_gpio_init(CAN_TypeDef* CANx,                  /*< CANx contraler Selecti
 int can_init(CAN_TypeDef* CANx,        /*<CAN contraler Selection>*/
 	
              /*-------------- CAN functional options configuration: -----------------------------*/
-             bool TTCM,                /*<Time triggered communication mode>*/
-						 bool ABOM,                /*< Automatic bus-off management>*/
-						 bool AWUM,                /*< Automatic wakeup mode>*/
-						 bool NART,                /*< No automatic retransmission>*/
-             bool RFLM,                /*< Receive FIFO locked mode>*/
-						 bool TXFP,                /*< Transmit FIFO priority>*/
+			bool TTCM,                /*<Time triggered communication mode>*/
+			bool ABOM,                /*< Automatic bus-off management>*/
+			bool AWUM,                /*< Automatic wakeup mode>*/
+			bool NART,                /*< No automatic retransmission>*/
+            bool RFLM,                /*< Receive FIFO locked mode>*/
+		    bool TXFP,                /*< Transmit FIFO priority>*/
 
              /*-------------- Bit timing configuration: -----------------------------------------*/						 
-             uint32_t SJW,             /*< Synchronization Jump Width>*/
-						 uint32_t BS1,             /*< Bit segment 1>*/
-						 uint32_t BS2,             /*< Bit segment 2>*/
-             uint32_t PRESCALER,       /*< Baud rate prescaler>*/ 
+            uint32_t SJW,             /*< Synchronization Jump Width>*/
+			uint32_t BS1,             /*< Bit segment 1>*/
+			uint32_t BS2,             /*< Bit segment 2>*/
+            uint32_t PRESCALER,       /*< Baud rate prescaler>*/ 
 
              /*-------------- Testing configuration: -------------------------------------------*/						 
-             bool LOOPBACK,            /*< for enable or Disable CAN Loop back Mode>*/
-						 bool SILENT               /*< for enable or Disable CAN Silent Mode>*/
+            bool LOOPBACK,            /*< for enable or Disable CAN Loop back Mode>*/
+			bool SILENT               /*< for enable or Disable CAN Silent Mode>*/
 							)
 { 
 	int init_Status = CAN_InitStatus_FAILED;
@@ -310,11 +310,11 @@ int can_init(CAN_TypeDef* CANx,        /*<CAN contraler Selection>*/
 }
 
 int can_transmit(CAN_TypeDef *CANx,       /*<CAN protocol contraler Selection>*/
-	               uint32_t ID,             /*< Message identifier>*/   
-                 bool EXT,                /*< Used for extend message ID>*/ 
-								 bool RTR,                /*< Remote transmission request (This node waits data from another node)>*/ 
-                 uint8_t DLC,             /*< Data length>*/ 
-								 uint8_t *DATA)           /*< DATA Transmition>*/ 
+	            uint32_t ID,             /*< Message identifier>*/   
+                bool EXT,                /*< Used for extend message ID>*/ 
+				bool RTR,                /*< Remote transmission request (This node waits data from another node)>*/ 
+                uint8_t DLC,             /*< Data length>*/ 
+				uint8_t *DATA)           /*< DATA Transmition>*/ 
 {
 //===================================================================
 //           Searching for empty MailBox :
